@@ -1,0 +1,9 @@
+<template>
+    <lightning-layout multiple-rows>
+        <template for:each={images} for:item="imageData" for:index="index">
+            <lightning-layout-item size="3" key={imageData.image} class={imageData.class} lwc:if={imageData.show}>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2pCBI5Z8S68Hkdmyeig8kNCtihMa166bAaA&s"></img>
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+</template> 

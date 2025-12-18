@@ -1,0 +1,55 @@
+<template>
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item size="8" class="slds-box">
+
+            <!--Heading Layout-->
+            <lightning-layout horizontal-align="center" class="slds-border_bottom">
+                <lightning-layout-item class="slds-text-heading_large">
+                    Client Detail
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!--Name Component-->
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item size="12" class="slds-m-top_small">
+                    <c-sf-name-component onfirstnamechange={handleFirstName} onmiddlenamechange={handleMiddleName}
+                    onlastnamechange={handleLastName}></c-sf-name-component>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!--Contact Component-->
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item size="12" class="slds-m-top_small slds-m-bottom_large">
+                    <c-sf-contact-component onphonechange={handlePhone} onemailchange={handleEmail}>
+                    </c-sf-contact-component>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!--Toggle Button-->
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-input type="toggle" message-toggle-active="Show Address" 
+                    message-toggle-inactive="Hide Address" onchange={handleAddressToggle}>
+                    </lightning-input>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <!--Address Component-->
+            <lightning-layout horizontal-align="center" if:false={hideAddress}>
+                <lightning-layout-item size="12">
+                    <lightning-input-address address-label="Current Address" city-label="City"
+                    country-label="Country" postal-code-label="Pincode" province-label="State/Province"
+                    street-label="Street">
+                    </lightning-input-address>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item>
+                    <lightning-button label="Submit" variant="Brand" onclick={handleSubmit}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

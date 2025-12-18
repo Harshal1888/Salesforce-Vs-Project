@@ -1,0 +1,13 @@
+<template>
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item if:true={show}>
+            <c-sf-lifecycle-hooks-child></c-sf-lifecycle-hooks-child>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item>
+            <lightning-button label="Toggle" onclick={toggleVisibility}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
